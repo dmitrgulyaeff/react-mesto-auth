@@ -1,0 +1,23 @@
+.register__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register__form input {
+  outline: none;
+  margin-top: 30px;
+  padding: 0 0 6px 1px;
+  height: 27px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  color: white;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.register__form input::placeholder {
+  color: #ccc;
+}

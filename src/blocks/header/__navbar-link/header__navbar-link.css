@@ -1,0 +1,11 @@
+.header__navbar-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+line-height: 22px;
+}
+
+.header__navbar-link:hover {
+  color: #a9a9a9;
+  transition: 0.2s ease-out;
+}

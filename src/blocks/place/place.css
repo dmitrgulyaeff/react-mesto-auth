@@ -1,0 +1,13 @@
+.place {
+  position: relative;
+  background-color: white;
+  width: 282px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "photo photo"
+    "name like"
+    "name number";
+}

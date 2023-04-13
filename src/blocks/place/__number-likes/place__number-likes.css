@@ -1,0 +1,10 @@
+.place__number-likes {
+  display: block;
+  grid-area: number;
+  color: red;
+  font-size: 13px;
+  margin: 0 20px 22px auto;
+  align-self: center;
+  min-width: 22px;
+  text-align: center;
+}

@@ -1,0 +1,8 @@
+.register__subscription {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+}

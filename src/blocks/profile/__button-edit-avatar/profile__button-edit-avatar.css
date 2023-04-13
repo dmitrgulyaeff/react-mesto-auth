@@ -1,0 +1,24 @@
+.profile__button-edit-avatar {
+  padding: 0;
+  border: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  grid-area: avatar;
+  opacity: 0;
+  background: rgba(0,0,0, 0.8) url("/src/images/svg/big-pen.svg") no-repeat center;
+  transition: opacity ease-out 1000ms;
+}
+
+.profile__button-edit-avatar:hover {
+  opacity: 1;
+  transition: opacity ease-out 250ms;
+}
+
+@media screen and (max-width: 1000px) {
+  .profile__button-edit-avatar {
+    justify-self: center;
+    max-width: 120px;
+    margin-bottom: 26px;
+  }
+}

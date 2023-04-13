@@ -1,0 +1,14 @@
+.header__logo {
+  display: block;
+  margin: 0;
+  max-width: 142px;
+  width: calc(103.74px + (142 - 103.74) * (100vw - 320px) / (1280 - 320));
+  min-width: 103.74px;
+}
+
+@media screen and (max-width: 1280px) {
+  .header__logo {
+    margin-left: 27px;
+  }
+}
+

@@ -1,0 +1,33 @@
+.profile__button-add-place {
+  cursor: pointer;
+  padding: 23px 73px;
+  background: url("../../../images/svg/plus.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #ffffff;
+  grid-area: plus;
+  justify-self: end;
+  align-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .profile__button-add-place {
+    justify-self: center;
+    background-size: 16px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: calc((75% - 16px) / 2 + 6px);
+    padding-right: calc((75% - 16px) / 2 + 6px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile__button-add-place {
+    padding-left: calc((100% - 16px) / 2 + 6px);
+    padding-right: calc((100% - 16px) / 2 + 6px);
+  }
+}
+
+.profile__button-add-place:hover {
+  opacity: 0.6;
+}

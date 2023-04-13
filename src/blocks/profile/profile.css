@@ -1,0 +1,26 @@
+.profile {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 120px 30px minmax(0, max-content) 20px 24px minmax(
+      393px,
+      1fr
+    );
+  grid-template-rows: 70px 50px;
+  grid-template-areas:
+    "avatar . name . pen plus"
+    "avatar . description . . plus";
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .profile {
+    margin-bottom: 36px;
+    grid-template-columns: minmax(28px, 1fr) auto minmax(28px, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "avatar avatar avatar"
+      ". name pen"
+      "description description description"
+      "plus plus plus";
+  }
+}
