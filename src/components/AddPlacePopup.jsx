@@ -19,7 +19,6 @@ function AddPlacePopup({ isOpen, onClose, onSubmit }) {
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit({ name: cardName, link: cardLink });
-        onClose();
       }}
       onClose={onClose}
     >

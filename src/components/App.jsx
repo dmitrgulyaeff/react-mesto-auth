@@ -146,6 +146,7 @@ function App() {
     return api
       .addNewCard(newCard)
       .then((nCard) => setCards([nCard, ...cards]))
+      .then(closeAllPopups)
       .catch((err) => console.log('Ошибка удаления карточки', err));
   };
 
