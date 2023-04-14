@@ -14,7 +14,7 @@ function Main({
   const currentUser = useContext(CurrentUserContext);
 
   return (
-    <>
+    <main>
       <section className="profile">
         <img
           className="profile__avatar"
@@ -55,7 +55,7 @@ function Main({
           })}
         </ul>
       </section>
-    </>
+    </main>
   );
 }
 

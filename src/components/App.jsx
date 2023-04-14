@@ -171,53 +171,50 @@ function App() {
         email={headerEmail}
         isApiRequestReceived={isApiRequestReceived}
       />
-      <main className="content">
+      <div className="content">
         {isApiRequestReceived && (
           <Routes>
             <Route
               path="/"
               element={
                 <ProtectedRoute IsAllowed={loggedIn} path={'/sign-in'}>
-                  <>
-                    <Main
-                      onEditProfile={() => {
-                        setIsEditProfilePopupOpen(true);
-                      }}
-                      onAddPlace={() => {
-                        setIsAddPlacePopupOpen(true);
-                      }}
-                      onEditAvatar={() => {
-                        setIsEditAvatarPopupOpen(true);
-                      }}
-                      onCardClick={handleCardClick}
-                      cards={cards}
-                      onCardLike={handleCardLike}
-                      onCardDelete={handleCardDelete}
-                    />
-                    <Footer />
+                  <Main
+                    onEditProfile={() => {
+                      setIsEditProfilePopupOpen(true);
+                    }}
+                    onAddPlace={() => {
+                      setIsAddPlacePopupOpen(true);
+                    }}
+                    onEditAvatar={() => {
+                      setIsEditAvatarPopupOpen(true);
+                    }}
+                    onCardClick={handleCardClick}
+                    cards={cards}
+                    onCardLike={handleCardLike}
+                    onCardDelete={handleCardDelete}
+                  />
+                  <Footer />
 
-                    <AddPlacePopup
-                      isOpen={isAddPlacePopupOpen}
-                      onClose={closeAllPopups}
-                      onSubmit={handleAddPlaceSubmit}
-                    />
-                    <EditAvatarPopup
-                      isOpen={isEditAvatarPopupOpen}
-                      onClose={closeAllPopups}
-                      onUpdateAvatar={handleUpdateAvatar}
-                    />
-                    <EditProfilePopup
-                      isOpen={isEditProfilePopupOpen}
-                      onClose={closeAllPopups}
-                      onUpdateUser={handleUpdateUser}
-                    />
-
-                    <ImagePopup
-                      card={selectedCard}
-                      isOpen={isImagePopupOpen}
-                      onClose={closeAllPopups}
-                    />
-                  </>
+                  <AddPlacePopup
+                    isOpen={isAddPlacePopupOpen}
+                    onClose={closeAllPopups}
+                    onSubmit={handleAddPlaceSubmit}
+                  />
+                  <EditAvatarPopup
+                    isOpen={isEditAvatarPopupOpen}
+                    onClose={closeAllPopups}
+                    onUpdateAvatar={handleUpdateAvatar}
+                  />
+                  <EditProfilePopup
+                    isOpen={isEditProfilePopupOpen}
+                    onClose={closeAllPopups}
+                    onUpdateUser={handleUpdateUser}
+                  />
+                  <ImagePopup
+                    card={selectedCard}
+                    isOpen={isImagePopupOpen}
+                    onClose={closeAllPopups}
+                  />
                 </ProtectedRoute>
               }
             />
@@ -248,7 +245,7 @@ function App() {
           onClose={closeAllPopups}
           isValid={isValid}
         />
-      </main>
+      </div>
     </CurrentUserContext.Provider>
   );
 }
