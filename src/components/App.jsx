@@ -40,8 +40,8 @@ function App() {
 
   const handleTokenCheck = () => {
     setIsApiRequestReceived(false);
-    if (localStorage.getItem('token')) {
-      const jwt = localStorage.getItem('token');
+    const jwt = localStorage.getItem('token');
+    if (jwt) {
       auth.checkToken(jwt).then((res) => {
         setIsApiRequestReceived(true);
         if (res) {
