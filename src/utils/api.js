@@ -5,7 +5,7 @@ class Api {
   }
 
   _doFetch = (url, requestOptions) => {
-    return fetch(url, requestOptions).then((res) => {
+    return fetch(this._baseUrl + url, requestOptions).then((res) => {
       if (res.ok) {
         return res.json();
       }
@@ -15,7 +15,7 @@ class Api {
 
   // 1. Загрузка информации о пользователе с сервера
   getProfileInfo = () => {
-    const url = this._baseUrl + '/users/me';
+    const url = '/users/me';
     const requestOptions = {
       method: 'GET',
       headers: this._headers,
@@ -26,7 +26,7 @@ class Api {
 
   // 2. Загрузка карточек с сервера
   getInitialCards = () => {
-    const url = this._baseUrl + '/cards';
+    const url = '/cards';
     const requestOptions = {
       method: 'GET',
       headers: this._headers,
@@ -37,7 +37,7 @@ class Api {
 
   // 3. Редактирование профиля
   setProfileInfo = ({ name, about }) => {
-    const url = this._baseUrl + '/users/me';
+    const url = '/users/me';
     const raw = JSON.stringify({
       name: name,
       about: about,
@@ -53,7 +53,7 @@ class Api {
 
   // 4. Добавление новой карточки
   addNewCard = ({ name, link }) => {
-    const url = this._baseUrl + '/cards';
+    const url = '/cards';
     const raw = JSON.stringify({
       name: name,
       link: link,
@@ -69,7 +69,7 @@ class Api {
 
   // 7. Удалить карточку
   deleteCard = (idCard) => {
-    const url = this._baseUrl + '/cards/' + idCard;
+    const url = '/cards/' + idCard;
     const requestOptions = {
       method: 'DELETE',
       headers: this._headers,
@@ -79,7 +79,7 @@ class Api {
 
   // 8. Поставить лайк
   _likeCard = (idCard) => {
-    const url = this._baseUrl + '/cards/' + idCard + '/likes';
+    const url = '/cards/' + idCard + '/likes';
     const requestOptions = {
       method: 'PUT',
       headers: this._headers,
@@ -89,7 +89,7 @@ class Api {
 
   // 8. Убрать лайк
   _unlikeCard = (idCard) => {
-    const url = this._baseUrl + '/cards/' + idCard + '/likes';
+    const url = '/cards/' + idCard + '/likes';
     const requestOptions = {
       method: 'DELETE',
       headers: this._headers,
@@ -108,7 +108,7 @@ class Api {
 
   // 9. Обновление аватара пользователя
   updateProfileAvatar = (photoLink) => {
-    const url = this._baseUrl + '/users/me/avatar';
+    const url = '/users/me/avatar';
     const raw = JSON.stringify({
       avatar: photoLink,
     });
