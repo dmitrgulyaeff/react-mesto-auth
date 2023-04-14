@@ -42,15 +42,18 @@ function App() {
     setIsApiRequestReceived(false);
     const jwt = localStorage.getItem('token');
     if (jwt) {
-      auth.checkToken(jwt).then((res) => {
-        setIsApiRequestReceived(true);
-        if (res) {
-          setHeaderEmail(res.data.email);
-          setLoggedIn(true);
-        } else {
-          setLoggedIn(false);
-        }
-      });
+      auth
+        .checkToken(jwt)
+        .then((res) => {
+          setIsApiRequestReceived(true);
+          if (res) {
+            setHeaderEmail(res.data.email);
+            setLoggedIn(true);
+          } else {
+            setLoggedIn(false);
+          }
+        })
+        .catch((err) => console.log('Токен не верен', err));
     } else {
       setLoggedIn(false);
       setIsApiRequestReceived(true);
@@ -140,7 +143,7 @@ function App() {
   };
 
   const handleAddPlaceSubmit = (newCard) => {
-    api
+    return api
       .addNewCard(newCard)
       .then((nCard) => setCards([nCard, ...cards]))
       .catch((err) => console.log('Ошибка удаления карточки', err));
