@@ -21,7 +21,7 @@ const Login = ({ handleLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     auth
-      .authorization({ email: formValue.email, password: formValue.password })
+      .login({ email: formValue.email, password: formValue.password })
       .then((request) => {
         if (request.token) {
           localStorage.setItem('token', `${request.token}`);

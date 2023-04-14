@@ -21,7 +21,7 @@ const Register = ({ handleRegister }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     auth
-      .registration({ email: formValue.email, password: formValue.password })
+      .register({ email: formValue.email, password: formValue.password })
       .then((request) => {
         if (request) {
           setFormValue({ email: '', password: '' });

@@ -12,8 +12,8 @@ class Auth {
     });
   };
 
-  // registration
-  registration({ email, password }) {
+  // register
+  register({ email, password }) {
     const url = this._baseUrl + 'signup';
     const raw = JSON.stringify({ email, password });
     const requestOptions = {
@@ -26,8 +26,8 @@ class Auth {
     return this._doFetch(url, requestOptions);
   }
 
-  // authorization
-  authorization({ email, password }) {
+  // login
+  login({ email, password }) {
     const url = this._baseUrl + 'signin';
     const raw = JSON.stringify({ email, password });
     const requestOptions = {
@@ -40,8 +40,8 @@ class Auth {
     return this._doFetch(url, requestOptions);
   }
 
-  // authentication
-  authentication(token) {
+  // checkToken
+  checkToken(token) {
     const url = this._baseUrl + 'users/me';
     const requestOptions = {
       method: 'GET',

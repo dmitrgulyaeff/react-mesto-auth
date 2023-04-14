@@ -42,7 +42,7 @@ function App() {
     setIsApiRequestReceived(false);
     if (localStorage.getItem('token')) {
       const jwt = localStorage.getItem('token');
-      auth.authentication(jwt).then((res) => {
+      auth.checkToken(jwt).then((res) => {
         setIsApiRequestReceived(true);
         if (res) {
           setHeaderEmail(res.data.email);
