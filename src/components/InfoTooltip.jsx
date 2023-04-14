@@ -1,5 +1,5 @@
-import Error from '../images/svg/error.svg';
-import Success from '../images/svg/success.svg';
+import error from '../images/svg/error.svg';
+import success from '../images/svg/success.svg';
 
 function InfoTooltip({ name, isOpen, onClose, isValid }) {
   return (
@@ -13,7 +13,7 @@ function InfoTooltip({ name, isOpen, onClose, isValid }) {
           aria-label="Закрыть поп-ап"
           onClick={onClose}
         ></button>
-        {<img className={`popup__image popup__image_el_${name}`} src={isValid ? Success : Error} alt={isValid ? 'Успешно' : 'Проблема'} />}
+        {<img className={`popup__image popup__image_el_${name}`} src={isValid ? success : error} alt={isValid ? 'Успешно' : 'Проблема'} />}
         <h2 className={`popup__title popup__title_el_${name}`}>
           {isValid ? 'Вы успешно зарегистрировались!' : 'Что-то пошло не так! Попробуйте ещё раз.'}
         </h2>
